@@ -37,3 +37,4 @@ C:\Users\bakula\source\repos\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Deb
 C:\Users\bakula\source\repos\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\bakula\source\repos\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\bakula\source\repos\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\bakula\source\repos\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\RealTimeAuctionSystem.staticwebassets.runtime.json

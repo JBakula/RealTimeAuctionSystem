@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
+      "PackagePath": "staticwebassets\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
+      "PackagePath": "staticwebassets\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.RealTimeAuctionSystem.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.RealTimeAuctionSystem.props",
+      "PackagePath": "build\\RealTimeAuctionSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.RealTimeAuctionSystem.props",
+      "PackagePath": "buildMultiTargeting\\RealTimeAuctionSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.RealTimeAuctionSystem.props",
+      "PackagePath": "buildTransitive\\RealTimeAuctionSystem.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

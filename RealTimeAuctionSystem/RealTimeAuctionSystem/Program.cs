@@ -1,4 +1,7 @@
 using RealTimeAuctionSystem.Context;
+using RealTimeAuctionSystem.Hubs;
+using RealTimeAuctionSystem.Repositories.AuctionRepo;
+using RealTimeAuctionSystem.Repositories.BidRepo;
 using RealTimeAuctionSystem.Repositories.CategoryRepo;
 using RealTimeAuctionSystem.Repositories.UserRepo;
 
@@ -8,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
 builder.Services.AddScoped<IUserRepo, UserRepo>();  
+builder.Services.AddScoped<IAuctionRepo, AuctionRepo>();
+builder.Services.AddScoped<IBidRepo, BidRepo>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -27,6 +32,7 @@ builder.Services.AddCors(options =>
             .SetIsOriginAllowedToAllowWildcardSubdomains();
         });
 });
+builder.Services.AddSignalR();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -43,5 +49,6 @@ app.UseStaticFiles();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<BidHub>("/hubs/bidHub");
 
 app.Run();

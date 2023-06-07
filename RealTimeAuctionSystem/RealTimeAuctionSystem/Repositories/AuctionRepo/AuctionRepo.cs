@@ -25,13 +25,13 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
                 return auctions.ToList();
             }
         }
-        public async Task<Auction> CreateAuction(CreateAuctionDto newAuction)
+        public async Task<Auction> AddAuction(CreateAuctionDto newAuction)
         {
             var query = "insert into \"Auction\" (\"Title\",\"Description\",\"StartingPrice\",\"CategoryId\",\"StartsAt\",\"EndsIn\",\"Image\")" +
                 " values (@Title,@Description,@StartingPrice,@CategoryId,@StartsAt,@EndsIn,@Image) returning \"AuctionId\"";
 
             var currentTime = DateTime.Now;
-            var imagePath =await GenerateImagePath(newAuction.Image);
+            var imagePath = GenerateImagePath(newAuction.Image);
             var parameters = new DynamicParameters();
             parameters.Add("Title",newAuction.Title);
             parameters.Add("Description", newAuction.Description);
@@ -44,7 +44,7 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
 
             using (var connection = _context.CreateConnection())
             {
-                var id =await connection.QuerySingleAsync<int>(query,parameters);
+                var id = await connection.QuerySingleAsync<int>(query,parameters);
 
                 var auction = new Auction
                 {
@@ -61,7 +61,7 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
             }
 
         }
-        public async Task<string> GenerateImagePath(IFormFile image)
+        public string GenerateImagePath(IFormFile image)
         {
             try
             {
@@ -82,6 +82,73 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
             catch (Exception e)
             {
                 return "";
+            }
+        }
+        public async Task<bool> DoesCategoryExist(int categoryId)
+        {
+            var query = "select * from \"Category\" where \"CategoryId\"=@CategoryId";
+            
+            using (var connection = _context.CreateConnection())
+            {
+                var category = await connection.QueryFirstOrDefaultAsync(query, new { categoryId });
+                if (category != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public async Task UpdateAuction(int id, UpdateAuctionDto auction)
+        {
+            var query = "update \"Auction\" set \"Title\" = @Title, \"Description\" = @Description, \"StartingPrice\" = @StartingPrice, \"CategoryId\" = @CategoryId," +
+                "\"StartsAt\" = @StartsAt, \"EndsIn\" = @EndsIn, \"Image\" = @Image where \"AuctionId\" = @AuctionId ";
+
+            var paramteres = new DynamicParameters();
+            var imagePath = GenerateImagePath(auction.Image);
+            paramteres.Add("AuctionId", id);
+            paramteres.Add("Title", auction.Title);
+            paramteres.Add("Description", auction.Description);
+            paramteres.Add("StartingPrice", auction.StartingPrice);
+            paramteres.Add("CategoryId", auction.CategoryId);
+            paramteres.Add("StartsAt", auction.StartsAt);
+            paramteres.Add("EndsIn", auction.EndsIn);
+            paramteres.Add("Image", imagePath);
+
+            using (var connection = _context.CreateConnection())
+            {
+                await connection.ExecuteAsync(query, paramteres);
+
+            }
+        }
+
+        public async Task DeleteAuction(int id)
+        {
+            var query = "delete from \"Auction\" where \"AuctionId\" = @id";
+            using(var connection = _context.CreateConnection())
+            {
+                await connection.ExecuteAsync(query,new { id });
+            }
+
+        }
+        public async Task<bool> DoesAuctionExist(int id)
+        {
+            var query = "select * from \"Auction\" where \"AuctionId\" = @id";
+
+            using(var connection = _context.CreateConnection())
+            {
+                var auction = await connection.QueryFirstOrDefaultAsync<Auction>(query,new { id });
+                if(auction != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
     }

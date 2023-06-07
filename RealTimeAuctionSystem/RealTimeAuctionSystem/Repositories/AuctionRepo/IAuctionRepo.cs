@@ -7,6 +7,11 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
     {
         Task<IEnumerable<Auction>> GetAuctions();
         Task<Auction> AddAuction(CreateAuctionDto newAuction);
-        Task <string> GenerateImagePath(IFormFile image)
+        string GenerateImagePath(IFormFile image);
+        Task<bool> DoesCategoryExist(int categoryId);
+        Task UpdateAuction(int id, UpdateAuctionDto auction);
+        Task DeleteAuction(int id);
+        Task<bool> DoesAuctionExist(int id);
+  
     }
 }

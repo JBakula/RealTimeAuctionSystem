@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "z35R0gR/jNFJJQBzznkouFzq5DwZpJ1rKkiYzf6u2oc=",
+  "Hash": "M4I+qiHoz3kxkFshxVRCaJdS8B8tKAAFpHRMcyf8tVc=",
   "Source": "RealTimeAuctionSystem",
   "BasePath": "_content/RealTimeAuctionSystem",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "RealTimeAuctionSystem\\wwwroot",
+      "Source": "RealTimeAuctionSystem",
+      "ContentRoot": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "BasePath": "_content/RealTimeAuctionSystem",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
+      "SourceId": "RealTimeAuctionSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "BasePath": "_content/RealTimeAuctionSystem",
+      "RelativePath": "images/0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
+      "SourceId": "RealTimeAuctionSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "BasePath": "_content/RealTimeAuctionSystem",
+      "RelativePath": "images/ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg"
+    }
+  ]
 }
