@@ -1,0 +1,32 @@
+<div>
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon">
+            <mat-icon>home</mat-icon>
+        </button>
+        <span>Home</span>
+        <span class="example-spacer"></span>
+        <button class="example-icon" 
+            mat-icon-button 
+            #userMenuTrigger="matMenuTrigger"
+            (mouseover)="openMyMenu(userMenuTrigger)"
+            [matMenuTriggerFor]="userMenu">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #userMenu="matMenu">
+            <span (mouseleave)="closeMyMenu(userMenuTrigger)">
+                <button mat-menu-item>
+                  <mat-icon>person</mat-icon>
+                  <span>Username</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon class="bttn-color-login">sentiment_very_satisfied</mat-icon>
+                  <span>Log in</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon class="bttn-color-logout">sentiment_very_dissatisfied</mat-icon>
+                  <span>Log out</span>
+                </button>
+            </span>
+          </mat-menu>
+    </mat-toolbar>
+</div>

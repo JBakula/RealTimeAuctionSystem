@@ -1,0 +1,9 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.bttn-color-login{
+  color: green;
+}
+.bttn-color-logout{
+  color: red;
+}

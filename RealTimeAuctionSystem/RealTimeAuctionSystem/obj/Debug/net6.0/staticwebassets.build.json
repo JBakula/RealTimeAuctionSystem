@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "M4I+qiHoz3kxkFshxVRCaJdS8B8tKAAFpHRMcyf8tVc=",
+  "Hash": "QHDMmPV9TNLyBhbNQWiU3AuChyfy9hj8G76TK0duNOE=",
   "Source": "RealTimeAuctionSystem",
   "BasePath": "_content/RealTimeAuctionSystem",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "RealTimeAuctionSystem\\wwwroot",
       "Source": "RealTimeAuctionSystem",
-      "ContentRoot": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
       "BasePath": "_content/RealTimeAuctionSystem",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
+      "Identity": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
       "SourceId": "RealTimeAuctionSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
       "BasePath": "_content/RealTimeAuctionSystem",
       "RelativePath": "images/0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg"
     },
     {
-      "Identity": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
+      "Identity": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
       "SourceId": "RealTimeAuctionSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bakula\\source\\repos\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
       "BasePath": "_content/RealTimeAuctionSystem",
       "RelativePath": "images/ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
       "AssetKind": "All",
