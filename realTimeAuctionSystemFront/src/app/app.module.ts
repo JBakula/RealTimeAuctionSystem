@@ -6,22 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { BidComponent } from './components/bid/bid.component';
-import { CategoryComponent } from './components/category/category.component';
-import { UserComponent } from './components/user/user.component';
-import { AuctionComponent } from './components/auction/auction.component';
 import { SharedService } from './services/shared.service';
 import { MaterialsModule } from './materials/materials.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MainAuctionComponent } from './components/main-auction/main-auction.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuctionComponent,
-    BidComponent,
-    CategoryComponent,
-    UserComponent,
-    NavbarComponent
+    NavbarComponent,
+    MainAuctionComponent
   ],
   imports: [
     BrowserModule,

@@ -7,3 +7,9 @@
 .bttn-color-logout{
   color: red;
 }
+.navbar-container{
+  padding: 0.5rem;
+}
+.navbar-toolbar{
+  border-radius: 1.5rem;
+}
