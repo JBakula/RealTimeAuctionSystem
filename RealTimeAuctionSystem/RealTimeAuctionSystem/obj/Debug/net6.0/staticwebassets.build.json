@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QHDMmPV9TNLyBhbNQWiU3AuChyfy9hj8G76TK0duNOE=",
+  "Hash": "kj7rLOMV72PK0xTyLTIBj+HaTvsulnifyzf1uxEbvZQ=",
   "Source": "RealTimeAuctionSystem",
   "BasePath": "_content/RealTimeAuctionSystem",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg",
+      "SourceId": "RealTimeAuctionSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "BasePath": "_content/RealTimeAuctionSystem",
+      "RelativePath": "images/daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg"
     }
   ]
 }

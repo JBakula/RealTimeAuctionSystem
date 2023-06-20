@@ -1,58 +1,42 @@
-<div class="main-auction-container">
-    <table mat-table [dataSource]="dataSource" >
-        <ng-container matColumnDef="auctionId">
-            <th mat-header-cell *matHeaderCellDef> Auction id </th>
-            <td mat-cell *matCellDef="let element"> {{element.auctionId}} </td>
-        </ng-container>
-        
-        <ng-container matColumnDef="title">
-            <th mat-header-cell *matHeaderCellDef> Title </th>
-            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-        </ng-container>
-        
-        <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef> Description </th>
-            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-        </ng-container>
-        
-        <ng-container matColumnDef="startingPrice">
-            <th mat-header-cell *matHeaderCellDef> Starting price </th>
-            <td mat-cell *matCellDef="let element"> {{element.startingPrice}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="categoryId">
-            <th mat-header-cell *matHeaderCellDef> Category id </th>
-            <td mat-cell *matCellDef="let element"> {{element.categoryId}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="startsAt">
-            <th mat-header-cell *matHeaderCellDef> Starts at </th>
-            <td mat-cell *matCellDef="let element"> {{element.startsAt | date: 'short'}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="endsIn">
-            <th mat-header-cell *matHeaderCellDef> Ends in </th>
-            <td mat-cell *matCellDef="let element"> {{element.endsIn | date: 'short'}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="image">
-            <th mat-header-cell *matHeaderCellDef> Image </th>
-            <td mat-cell *matCellDef="let element"> 
-                <span *ngIf="element.image !== null">
-                    <img src="https://localhost:7273/{{element.image}}"> 
-                </span>
-                <span *ngIf="element.image === null">
-                    <img src="assets/noImage.png"> 
-                </span>
-            </td>
-        </ng-container>
-
-        <ng-container matColumnDef="bids">
-            <th mat-header-cell *matHeaderCellDef> Bid </th>
-            <td mat-cell *matCellDef="let element"> {{element.bids}} </td>
-        </ng-container>
-        
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>      
+<div class="main-auction-container container">
+    <!-- CARDSS -->
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let auction of allAuctions">
+            <mat-card class="example-card">
+                <div class="div-card">
+                    <mat-card-header style="text-align: center;">
+                        <mat-card-title-group class="div-title-group">
+                            <mat-card-title>{{auction.title}}</mat-card-title>
+                            <mat-card-subtitle>Početna cijena: {{auction.startingPrice}}KM</mat-card-subtitle>
+                            <mat-divider></mat-divider>
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <img mat-card-xl-image *ngIf="auction.image !== null" src="https://localhost:7273/{{auction.image}}">
+                    <img mat-card-xl-image *ngIf="auction.image === null" src="assets/noImage.png" >
+                    <mat-card-content class="mt-2 mb-2">
+                        {{auction.description}}
+                        <mat-divider></mat-divider>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <div class="div-date">
+                            {{auction.startsAt | date: 'short'}}
+                        </div>
+                        <div class="div-date">
+                            {{auction.endsIn | date: 'short'}}
+                        </div>
+                    </mat-card-actions>
+                    <mat-card-actions style="flex-direction: column;">
+                        <button mat-button color="primary" style=" width: 15rem;" (click)="goToDetails(auction)">
+                            Auction details
+                        </button>
+                    </mat-card-actions>
+                </div>
+            </mat-card>
+        </div>
+        <mat-paginator [length]="100"
+            [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 25, 100]"
+            aria-label="Select page">
+        </mat-paginator>
+    </div>
 </div>

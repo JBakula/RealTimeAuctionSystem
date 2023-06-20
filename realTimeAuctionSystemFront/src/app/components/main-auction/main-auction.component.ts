@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IAllAuctions } from 'src/app/dtos/dtos';
 import { SharedService } from 'src/app/services/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-auction',
@@ -13,7 +14,7 @@ export class MainAuctionComponent implements OnInit {
   displayedColumns: string[] = ['auctionId', 'title', 'description', 'startingPrice',
     'categoryId', 'startsAt', 'endsIn', 'image', 'bids'];
 
-  constructor(private _sharedService: SharedService) {}
+  constructor(private _sharedService: SharedService, private router: Router) {}
 
   ngOnInit(): void {
     //  Dohvat svih aukcija
@@ -23,5 +24,9 @@ export class MainAuctionComponent implements OnInit {
     }, error => {
       console.log("We have a error: ", error);
     })
+  }
+
+  goToDetails(auction: IAllAuctions) {
+    this.router.navigate(['/details'], { queryParams: { data: auction.auctionId } });
   }
 }

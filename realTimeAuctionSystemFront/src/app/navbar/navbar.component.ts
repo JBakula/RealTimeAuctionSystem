@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,12 +9,19 @@ import { MatMenuTrigger } from '@angular/material/menu';
 })
 export class NavbarComponent {
 
-openMyMenu(menuTrigger: MatMenuTrigger) {
-  menuTrigger.openMenu();
-}
+  constructor(private router: Router) {}
 
-closeMyMenu(menuTrigger: MatMenuTrigger) {
-  menuTrigger.closeMenu();
-} 
+  openMyMenu(menuTrigger: MatMenuTrigger) {
+    menuTrigger.openMenu();
+  }
+
+  closeMyMenu(menuTrigger: MatMenuTrigger) {
+    menuTrigger.closeMenu();
+  }
+
+  //  Navigacija
+  goHome() {
+    this.router.navigateByUrl('');
+  }
 
 }
