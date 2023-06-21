@@ -37,7 +37,20 @@ export class AuctionDetailComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(AuctionFormDialogComponent);
+    const dialogRef = this.dialog.open(AuctionFormDialogComponent,{
+      width: '30rem',
+      height: '15rem',
+      data: {
+        auctionId: this.auction.auctionId,
+        title: this.auction.title,
+        description: this.auction.description,
+        startingPrice: this.auction.startingPrice,
+        categoryId: this.auction.categoryId,
+        startsAt: this.auction.startsAt,
+        endsIn: this.auction.endsIn,
+        image: this.auction.image,
+        bids: this.auction.bids
+      }
+    });
   }
-
 }

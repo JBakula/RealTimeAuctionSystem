@@ -1,30 +1,32 @@
-<mat-card class="example-card">
-    <div class="div-card">
-        <mat-card-header style="text-align: center;">
-            <mat-card-title-group class="div-title-group">
-                <mat-card-title>{{auction.title}}</mat-card-title>
-                <mat-card-subtitle>Početna cijena: {{auction.startingPrice}} KM</mat-card-subtitle>
+<div class="container main-auction-container">
+    <mat-card class="example-card">
+        <div class="div-card">
+            <mat-card-header style="text-align: center;">
+                <mat-card-title-group class="div-title-group">
+                    <mat-card-title>{{auction.title}}</mat-card-title>
+                    <mat-card-subtitle>Početna cijena: {{auction.startingPrice}} KM</mat-card-subtitle>
+                    <mat-divider></mat-divider>
+                </mat-card-title-group>
+            </mat-card-header>
+            <img mat-card-xl-image class="myImage" *ngIf="auction.image !== null" src="https://localhost:7273/{{auction.image}}">
+            <img mat-card-xl-image class="myImage" *ngIf="auction.image === null" src="assets/noImage.png" >
+            <mat-card-content class="mt-2 mb-2">
+                {{auction.description}}
                 <mat-divider></mat-divider>
-            </mat-card-title-group>
-        </mat-card-header>
-        <img mat-card-xl-image *ngIf="auction.image !== null" src="https://localhost:7273/{{auction.image}}">
-        <img mat-card-xl-image *ngIf="auction.image === null" src="assets/noImage.png" >
-        <mat-card-content class="mt-2 mb-2">
-            {{auction.description}}
-            <mat-divider></mat-divider>
-        </mat-card-content>
-        <mat-card-actions>
-            <div class="div-date">
-                {{auction.startsAt | date: 'short'}}
-            </div>
-            <div class="div-date">
-                {{auction.endsIn | date: 'short'}}
-            </div>
-        </mat-card-actions>
-        <mat-card-actions style="flex-direction: column;">
-            <button mat-button color="primary" style=" width: 15rem;" (click)="openDialog()">
-                Bid
-            </button>
-        </mat-card-actions>
-    </div>
-</mat-card>
+            </mat-card-content>
+            <mat-card-actions class="bid-card">
+                <div class="div-date">
+                    {{auction.startsAt | date: 'short'}}
+                </div>
+                <div class="div-date">
+                    {{auction.endsIn | date: 'short'}}
+                </div>
+            </mat-card-actions>
+            <mat-card-actions style="flex-direction: column;">
+                <button mat-button color="primary" style=" width: 15rem;" (click)="openDialog()">
+                    Bid
+                </button>
+            </mat-card-actions>
+        </div>
+    </mat-card>
+</div>

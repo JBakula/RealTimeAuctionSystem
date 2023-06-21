@@ -9,3 +9,9 @@ export interface IAllAuctions {
     image: string,
     bids: string
 }
+
+export interface IPlaceABid {
+    value: number,
+    auctionId: number,
+    userId: number
+}

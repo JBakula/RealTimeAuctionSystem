@@ -13,3 +13,11 @@
 .navbar-toolbar{
   border-radius: 1.5rem;
 }
+
+/* @Media */
+@media screen and (max-width: 540px) {
+  .navbar-toolbar {
+      flex-direction: column;
+      min-height: 35vh;
+  }
+}

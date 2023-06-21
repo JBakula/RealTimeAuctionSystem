@@ -26,3 +26,13 @@
     display: block;
     margin-bottom: 0.5rem;
 }
+
+/* @Media */
+@media screen and (max-width: 540px) {
+    .bid-card {
+        flex-direction: column;
+    }
+    .div-date {
+        margin-top: 0.3rem;
+    }
+}
