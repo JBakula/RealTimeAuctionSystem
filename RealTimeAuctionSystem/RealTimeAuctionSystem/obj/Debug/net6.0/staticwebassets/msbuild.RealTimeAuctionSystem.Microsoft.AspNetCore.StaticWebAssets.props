@@ -48,5 +48,21 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>RealTimeAuctionSystem</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/RealTimeAuctionSystem</BasePath>
+      <RelativePath>images/db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>

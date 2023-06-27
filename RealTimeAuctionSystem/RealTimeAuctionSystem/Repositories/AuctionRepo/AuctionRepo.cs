@@ -151,5 +151,19 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
                 }
             }
         }
+
+        public async Task<AuctionDetails> GetDetails(int id)
+        {
+            var query = "SELECT a.\"AuctionId\", a.\"Title\", a.\"Description\", a.\"StartingPrice\", c.\"CategoryId\", a.\"StartsAt\", a.\"EndsIn\", a.\"Image\", c.\"CategoryName\" " +
+            "FROM \"Auction\" a " +
+            "JOIN \"Category\" c ON c.\"CategoryId\" = a.\"CategoryId\" " +
+            "WHERE a.\"AuctionId\" = @id";
+
+            using (var connection = _context.CreateConnection())
+            {
+                var details = await connection.QueryFirstOrDefaultAsync<AuctionDetails>(query, new { id });
+                return details;
+            }
+        }
     }
 }

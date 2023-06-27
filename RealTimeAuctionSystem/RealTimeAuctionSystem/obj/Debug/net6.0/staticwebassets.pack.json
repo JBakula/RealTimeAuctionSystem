@@ -1,16 +1,20 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
+      "Id": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
       "PackagePath": "staticwebassets\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg"
     },
     {
-      "Id": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
+      "Id": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
       "PackagePath": "staticwebassets\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg"
     },
     {
-      "Id": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg",
+      "Id": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg",
       "PackagePath": "staticwebassets\\images\\daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png",
+      "PackagePath": "staticwebassets\\images\\db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.RealTimeAuctionSystem.Microsoft.AspNetCore.StaticWebAssets.props",

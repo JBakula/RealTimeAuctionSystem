@@ -27,7 +27,7 @@ namespace RealTimeAuctionSystem.Repositories.CategoryRepo
         }
         public async Task<IEnumerable<Auction>> GetAuctionByCategoryId(int categoryId)
         {
-            var query = "SELECT * FROM \"Auction\" WHERE \"CategoryId\" = @CategoryId ORDER BY \"StartsAt\" DESC";
+            var query = "SELECT * FROM \"Auction\" WHERE \"CategoryId\" = @categoryId ORDER BY \"StartsAt\" DESC";
 
             using(var connection = _context.CreateConnection())
             {
@@ -37,7 +37,7 @@ namespace RealTimeAuctionSystem.Repositories.CategoryRepo
         }
         public async Task<Category> AddCategory(CategoryRequestDto category)
         {
-            var query = "INSERT INTO \"Category\" (\"CategoryName\") VALUES (@CategoryName) returning \"CategoryId\""; 
+            var query = "INSERT INTO \"Category\" (\"CategoryName\") VALUES (@CategoryName) returning \"CategoryId\"";
 
             var parameters = new DynamicParameters();
             parameters.Add("CategoryName", category.CategoryName,DbType.String);

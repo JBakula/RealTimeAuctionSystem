@@ -86,5 +86,18 @@ namespace RealTimeAuctionSystem.Controllers
             }
             
         }
+        [HttpGet]
+        [Route("details/{id:int}")]
+        public async Task<IActionResult> GetDetails([FromRoute]int id)
+        {
+            if (await _auctionRepo.DoesAuctionExist(id))
+            {
+                return Ok(await _auctionRepo.GetDetails(id));
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
     }
 }
