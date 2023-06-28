@@ -12,6 +12,7 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
         Task UpdateAuction(int id, UpdateAuctionDto auction);
         Task DeleteAuction(int id);
         Task<bool> DoesAuctionExist(int id);
+        Task<AuctionDetails> GetDetails(int id);
   
     }
 }

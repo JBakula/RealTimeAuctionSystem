@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem.csproj": {}
+    "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem.csproj": {
+    "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem.csproj",
+        "projectUniqueName": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem.csproj",
         "projectName": "RealTimeAuctionSystem",
-        "projectPath": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem.csproj",
-        "packagesPath": "C:\\Users\\Tino-Vinko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\obj\\",
+        "projectPath": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem.csproj",
+        "packagesPath": "C:\\Users\\DT User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tino-Vinko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DT User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
-          "https://www.nuget.org/api/v2": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -73,24 +72,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.18, 6.0.18]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.18, 6.0.18]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.18, 6.0.18]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.18, 6.0.18]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -99,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

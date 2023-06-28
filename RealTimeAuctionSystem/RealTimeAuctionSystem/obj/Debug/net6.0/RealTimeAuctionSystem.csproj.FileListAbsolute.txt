@@ -78,3 +78,43 @@ C:\Users\Tino-Vinko\Desktop\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTime
 C:\Users\Tino-Vinko\Desktop\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.pdb
 C:\Users\Tino-Vinko\Desktop\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.genruntimeconfig.cache
 C:\Users\Tino-Vinko\Desktop\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\ref\RealTimeAuctionSystem.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.csproj.AssemblyReference.cache
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.AssemblyInfoInputs.cache
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.AssemblyInfo.cs
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.csproj.CoreCompileInputs.cache
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\refint\RealTimeAuctionSystem.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.pdb
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\appsettings.json
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\RealTimeAuctionSystem.staticwebassets.runtime.json
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\RealTimeAuctionSystem.exe
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\RealTimeAuctionSystem.deps.json
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\RealTimeAuctionSystem.runtimeconfig.json
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\RealTimeAuctionSystem.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\RealTimeAuctionSystem.pdb
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Dapper.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Npgsql.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\staticwebassets\msbuild.RealTimeAuctionSystem.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\staticwebassets\msbuild.build.RealTimeAuctionSystem.props
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.RealTimeAuctionSystem.props
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.RealTimeAuctionSystem.props
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\scopedcss\bundle\RealTimeAuctionSystem.styles.css
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.csproj.CopyComplete
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\RealTimeAuctionSystem.genruntimeconfig.cache
+C:\Users\DT User\Documents\GitHub\RealTimeAuctionSystem\RealTimeAuctionSystem\RealTimeAuctionSystem\obj\Debug\net6.0\ref\RealTimeAuctionSystem.dll

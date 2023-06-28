@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "YcR0hHg3tByb9oBv7Xcd3TNH6KhmmrzSIqZWl9ccpq0=",
+=======
+  "Hash": "5UN1kZmIDPC7FjbVoQM1diS64eAOwz/IxN+ghWFYTVQ=",
+>>>>>>> e2bb9551b379838aab53a027a01560c57385cc87
   "Source": "RealTimeAuctionSystem",
   "BasePath": "_content/RealTimeAuctionSystem",
   "Mode": "Default",
@@ -10,17 +14,17 @@
     {
       "Name": "RealTimeAuctionSystem\\wwwroot",
       "Source": "RealTimeAuctionSystem",
-      "ContentRoot": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
       "BasePath": "_content/RealTimeAuctionSystem",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
+      "Identity": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
       "SourceId": "RealTimeAuctionSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
       "BasePath": "_content/RealTimeAuctionSystem",
       "RelativePath": "images/0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg",
       "AssetKind": "All",
@@ -34,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\images\\0fc71255e18643b58fb43dce888730e7_DKR1.0.jpeg"
     },
     {
-      "Identity": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
+      "Identity": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
       "SourceId": "RealTimeAuctionSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
       "BasePath": "_content/RealTimeAuctionSystem",
       "RelativePath": "images/ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg",
       "AssetKind": "All",
@@ -51,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\images\\ba6eda93ab26488086741686b41ec791_20dark-superJumbo-v2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg",
+      "Identity": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg",
       "SourceId": "RealTimeAuctionSystem",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
       "BasePath": "_content/RealTimeAuctionSystem",
       "RelativePath": "images/daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg",
       "AssetKind": "All",
@@ -68,10 +72,17 @@
       "OriginalItemSpec": "wwwroot\\images\\daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png",
       "SourceId": "RealTimeAuctionSystem",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png",
+      "SourceId": "RealTimeAuctionSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DT User\\Documents\\GitHub\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+>>>>>>> e2bb9551b379838aab53a027a01560c57385cc87
       "BasePath": "_content/RealTimeAuctionSystem",
       "RelativePath": "images/db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png",
       "AssetKind": "All",
