@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MainAuctionComponent } from './components/main-auction/main-auction.component';
 import { AuctionDetailComponent } from './components/auction-detail/auction-detail.component';
 import { AuctionFormDialogComponent } from './dialogs/auction-form-dialog/auction-form-dialog.component';
+import { PlaceAuctionFormDialogComponent } from './dialogs/place-auction-form-dialog/place-auction-form-dialog.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AuctionFormDialogComponent } from './dialogs/auction-form-dialog/auctio
     NavbarComponent,
     MainAuctionComponent,
     AuctionDetailComponent,
-    AuctionFormDialogComponent
+    AuctionFormDialogComponent,
+    PlaceAuctionFormDialogComponent
   ],
   imports: [
     BrowserModule,

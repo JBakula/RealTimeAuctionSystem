@@ -7,6 +7,9 @@
       <span class="example-spacer"></span>
       <h2 style="margin-top: 1rem;">Real time auction</h2>
       <span class="example-spacer"></span>
+      <mat-label>
+        Username
+      </mat-label>
       <button class="example-icon" 
           mat-icon-button 
           #userMenuTrigger="matMenuTrigger"
@@ -16,9 +19,10 @@
       </button>
       <mat-menu #userMenu="matMenu">
           <span (mouseleave)="closeMyMenu(userMenuTrigger)">
-              <button mat-menu-item>
-                <mat-icon>person</mat-icon>
-                <span>Username</span>
+              <button mat-menu-item
+                      (click)="openDialog()">
+                <mat-icon>attach_money</mat-icon>
+                <span>Place auction</span>
               </button>
               <button mat-menu-item>
                 <mat-icon class="bttn-color-login">sentiment_very_satisfied</mat-icon>

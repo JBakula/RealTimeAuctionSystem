@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kj7rLOMV72PK0xTyLTIBj+HaTvsulnifyzf1uxEbvZQ=",
+  "Hash": "YcR0hHg3tByb9oBv7Xcd3TNH6KhmmrzSIqZWl9ccpq0=",
   "Source": "RealTimeAuctionSystem",
   "BasePath": "_content/RealTimeAuctionSystem",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\daaf9028b2424219bca51a9ff13a4daa_phonejpg.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\images\\db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png",
+      "SourceId": "RealTimeAuctionSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tino-Vinko\\Desktop\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\RealTimeAuctionSystem\\wwwroot\\",
+      "BasePath": "_content/RealTimeAuctionSystem",
+      "RelativePath": "images/db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\db910f5b317047e1a15c852507d1de72_04_bijela_pozadina.png"
     }
   ]
 }
