@@ -55,7 +55,7 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
                     StartingPrice = newAuction.StartingPrice,
                     CategoryId = newAuction.CategoryId,
                     StartsAt = currentTime,
-                    EndsIn = newAuction.EndsIn,
+                    EndsIn = endsIn,
                     Image = imagePath
                 };
                 return auction;
