@@ -30,7 +30,7 @@ namespace RealTimeAuctionSystem.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAuction([FromForm] CreateAuctionDto auction)
         {
-            if (auction.Title == "" || auction.Description == "" || auction.StartingPrice < 0 || !await _auctionRepo.DoesCategoryExist(auction.CategoryId) || auction.EndsIn<DateTime.Now)
+            if (auction.Title == "" || auction.Description == "" || auction.StartingPrice < 0 || !await _auctionRepo.DoesCategoryExist(auction.CategoryId) )
             {
                 return BadRequest();
             }

@@ -32,13 +32,14 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
 
             var currentTime = DateTime.Now;
             var imagePath = GenerateImagePath(newAuction.Image);
+            DateTime endsIn = DateTime.Parse(newAuction.EndsIn);
             var parameters = new DynamicParameters();
             parameters.Add("Title",newAuction.Title);
             parameters.Add("Description", newAuction.Description);
             parameters.Add("StartingPrice", newAuction.StartingPrice);
             parameters.Add("CategoryId", newAuction.CategoryId);
             parameters.Add("StartsAt", currentTime);
-            parameters.Add("EndsIn", newAuction.EndsIn);
+            parameters.Add("EndsIn", endsIn);
             parameters.Add("Image", imagePath);
 
 
