@@ -51,18 +51,14 @@ export class NavbarComponent {
         image: this.auction.image
       }
     });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(result);
-    //   if(result !== '') {
-    //     let myDate = new Date(); 
-    //     console.log(this.datePipe.transform(myDate, 'yyyy-mm-dd hh:mm:ss'));
-    //     result.endsIn = this.datePipe.transform(myDate, 'yyyy-mm-dd hh:mm:ss');
-    //     this._sharedService.placeAnAuction(result).subscribe(response => {
-    //       console.log(response);
-    //     }, error => {
-    //       console.log(error);
-    //     });
-    //   }
-    // });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result !== '') {
+        this._sharedService.placeAnAuction(result).subscribe(response => {
+          console.log(response);
+        }, error => {
+          console.log(error);
+        });
+      }
+    });
   }
 }

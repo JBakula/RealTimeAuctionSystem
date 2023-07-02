@@ -16,6 +16,7 @@ export class PlaceAuctionFormDialogComponent {
   auction: any;
   auctionFormGroup!: FormGroup;
   placeAuction!: IPlaceAnAuction;
+  helperImage?: FormData | null;
 
   constructor(public dialogRef: MatDialogRef<IPlaceAnAuction>, @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder, public datePipe: DatePipe, private _sharedService: SharedService) {
@@ -28,10 +29,18 @@ export class PlaceAuctionFormDialogComponent {
       descriptionValue: ['', [Validators.required]],
       startingPriceValue: ['', [Validators.required]],
       categoryIdValue: ['', [Validators.required]],
-      endsInValue: ['', [Validators.required]],
+      endsInValue: ['', [Validators.required, this.dateValidator()]],
       imageValue: ['', []],
     })
   }
+
+  imageUpload(event: any) {
+    let file = event.target.files[0]; 
+    console.log(file);
+    const formData: FormData = new FormData();
+    formData.append('file', file, file.name);
+    this.helperImage = formData;
+   }
 
   onSubmit() {
     this.placeAuction = {
@@ -40,25 +49,29 @@ export class PlaceAuctionFormDialogComponent {
       startingPrice: Number(this.auctionFormGroup.value.startingPriceValue),
       categoryId: Number(this.auctionFormGroup.value.categoryIdValue),
       endsIn: this.auctionFormGroup.value.endsInValue,
-      image: null
+      image: this.helperImage ? this.helperImage : null 
     }
 
+    console.log(this.placeAuction.image);
+
+
     this.placeAuction.endsIn = this.datePipe.transform(this.placeAuction.endsIn, 'yyyy-MM-dd hh:mm:ss') ?? '';
-
-    this._sharedService.placeAnAuction(this.placeAuction).subscribe(resp => {
-      console.log(resp);
-    }, error => {
-      console.log(error);
-    })
-
-    // this.dialogRef.close(this.placeAuction);
+    this.dialogRef.close(this.placeAuction);
   }
 
-  // dateValidator(): ValidatorFn {
-  //   return (control: AbstractControl): {[key: string]: boolean} | null => {
+  dateValidator(): ValidatorFn {
+    return (control: AbstractControl): {[key: string]: boolean} | null => {
 
-  //     return null;
-  //   }
-  // }
+      let date = new Date();
+      let today = this.datePipe.transform(date, 'yyyy-MM-dd hh:mm:ss') ?? '';
+      let value = this.datePipe.transform(control.value, 'yyyy-MM-dd hh:mm:ss') ?? '';
+
+      if(today > value) {
+        return { 'DateValidation': true};
+      }
+
+      return null;
+    }
+  }
 }
 

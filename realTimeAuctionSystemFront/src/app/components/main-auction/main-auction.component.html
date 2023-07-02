@@ -11,8 +11,8 @@
                             <mat-divider></mat-divider>
                         </mat-card-title-group>
                     </mat-card-header>
-                    <img mat-card-xl-image *ngIf="auction.image !== null" src="https://localhost:7273/{{auction.image}}">
-                    <img mat-card-xl-image *ngIf="auction.image === null" src="assets/noImage.png" >
+                    <img mat-card-xl-image *ngIf="auction.image !== null && auction.image !== ''" src="https://localhost:7273/{{auction.image}}">
+                    <img mat-card-xl-image *ngIf="auction.image === null || auction.image === ''" src="assets/noImage.png" >
                     <mat-card-content class="mt-2 mb-2">
                         {{auction.description}}
                         <mat-divider></mat-divider>
