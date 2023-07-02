@@ -2,7 +2,7 @@
     <header style="text-align: center;">
         <h1>Place auction</h1>
     </header>
-    <form [formGroup]="auctionFormGroup" (ngSubmit)="onSubmit()">
+    <form [formGroup]="auctionFormGroup" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
         <div class="row">
 
             <div class="col-md-6">
@@ -35,16 +35,7 @@
 
             <div class="col-md-6">
                 <mat-form-field style="width: 100%; margin-top: 1rem;">
-                    <mat-label>Starts at</mat-label>
-                    <input matInput type="datetime-local" formControlName="startsAtValue">
-                    <!-- <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle> -->
-                    <!-- <mat-datepicker #picker></mat-datepicker> -->
-                </mat-form-field>
-            </div>
-
-            <div class="col-md-6">
-                <mat-form-field style="width: 100%; margin-top: 1rem;">
-                    <mat-label>Starts at</mat-label>
+                    <mat-label>Ends in</mat-label>
                     <input matInput type="datetime-local" formControlName="endsInValue">
                     <!-- <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle> -->
                     <!-- <mat-datepicker #picker></mat-datepicker> -->

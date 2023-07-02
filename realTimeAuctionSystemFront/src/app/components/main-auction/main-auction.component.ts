@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IAllAuctions } from 'src/app/dtos/dtos';
 import { SharedService } from 'src/app/services/shared.service';
 import { Router } from '@angular/router';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'app-main-auction',

@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatMenuTrigger } from '@angular/material/menu';
@@ -15,15 +16,14 @@ export class NavbarComponent {
   auction!: IPlaceAnAuction;
 
   constructor(private router: Router, public dialog: MatDialog,
-    private _sharedService: SharedService) {
+    private _sharedService: SharedService, public datePipe: DatePipe) {
       this.auction = {
         title: '',
         description: '',
         startingPrice: 0,
         categoryId: 0,
-        startsAt: new Date(),
-        endsIn: new Date(),
-        image: ''
+        endsIn: '',
+        image: null
       }
     }
 
@@ -42,18 +42,27 @@ export class NavbarComponent {
 
   openDialog() {
     const dialogRef = this.dialog.open(PlaceAuctionFormDialogComponent,{
-      // width: '80%',
-      // height: '90%',
       data: {
         title: this.auction.title,
         description: this.auction.description,
         startingPrice: this.auction.startingPrice,
         categoryId: this.auction.categoryId,
-        startsAt: this.auction.startsAt,
         endsIn: this.auction.endsIn,
         image: this.auction.image
       }
     });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(result);
+    //   if(result !== '') {
+    //     let myDate = new Date(); 
+    //     console.log(this.datePipe.transform(myDate, 'yyyy-mm-dd hh:mm:ss'));
+    //     result.endsIn = this.datePipe.transform(myDate, 'yyyy-mm-dd hh:mm:ss');
+    //     this._sharedService.placeAnAuction(result).subscribe(response => {
+    //       console.log(response);
+    //     }, error => {
+    //       console.log(error);
+    //     });
+    //   }
+    // });
   }
-
 }

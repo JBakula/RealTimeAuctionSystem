@@ -13,6 +13,7 @@ import { MainAuctionComponent } from './components/main-auction/main-auction.com
 import { AuctionDetailComponent } from './components/auction-detail/auction-detail.component';
 import { AuctionFormDialogComponent } from './dialogs/auction-form-dialog/auction-form-dialog.component';
 import { PlaceAuctionFormDialogComponent } from './dialogs/place-auction-form-dialog/place-auction-form-dialog.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,11 @@ import { PlaceAuctionFormDialogComponent } from './dialogs/place-auction-form-di
     NgbModule,
     HttpClientModule,
     AppRoutingModule,
-    MaterialsModule
+    MaterialsModule,
   ],
   providers: [
-    SharedService
+    SharedService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,11 @@
+import { DatePipe } from '@angular/common';
 import { Component, Inject } from '@angular/core';
+import { ValidatorFn } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IPlaceAnAuction } from 'src/app/dtos/dtos';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-place-auction-form-dialog',
@@ -11,10 +15,10 @@ import { IPlaceAnAuction } from 'src/app/dtos/dtos';
 export class PlaceAuctionFormDialogComponent {
   auction: any;
   auctionFormGroup!: FormGroup;
-  bid!: IPlaceAnAuction;
+  placeAuction!: IPlaceAnAuction;
 
   constructor(public dialogRef: MatDialogRef<IPlaceAnAuction>, @Inject(MAT_DIALOG_DATA) public data: any,
-    private fb: FormBuilder) {
+    private fb: FormBuilder, public datePipe: DatePipe, private _sharedService: SharedService) {
       this.auction = data;
   }
 
@@ -24,15 +28,37 @@ export class PlaceAuctionFormDialogComponent {
       descriptionValue: ['', [Validators.required]],
       startingPriceValue: ['', [Validators.required]],
       categoryIdValue: ['', [Validators.required]],
-      startsAtValue: ['', [Validators.required]],
       endsInValue: ['', [Validators.required]],
-      imageValue: ['', [Validators.required]],
+      imageValue: ['', []],
     })
   }
 
   onSubmit() {
+    this.placeAuction = {
+      title: this.auctionFormGroup.value.titleValue,
+      description: this.auctionFormGroup.value.descriptionValue,
+      startingPrice: Number(this.auctionFormGroup.value.startingPriceValue),
+      categoryId: Number(this.auctionFormGroup.value.categoryIdValue),
+      endsIn: this.auctionFormGroup.value.endsInValue,
+      image: null
+    }
 
-    this.dialogRef.close();
+    this.placeAuction.endsIn = this.datePipe.transform(this.placeAuction.endsIn, 'yyyy-MM-dd hh:mm:ss') ?? '';
+
+    this._sharedService.placeAnAuction(this.placeAuction).subscribe(resp => {
+      console.log(resp);
+    }, error => {
+      console.log(error);
+    })
+
+    // this.dialogRef.close(this.placeAuction);
   }
 
+  // dateValidator(): ValidatorFn {
+  //   return (control: AbstractControl): {[key: string]: boolean} | null => {
+
+  //     return null;
+  //   }
+  // }
 }
+

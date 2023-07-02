@@ -15,7 +15,7 @@ export class AuctionFormDialogComponent implements OnInit{
   bid!: IPlaceABid;
 
   constructor(public dialogRef: MatDialogRef<AuctionDetailComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-    private fb: FormBuilder) {
+    private fb: FormBuilder ) {
       this.auction = data;
   }
 
@@ -29,10 +29,9 @@ export class AuctionFormDialogComponent implements OnInit{
     this.bid = {
       value: this.bidFormGroup.value.bidValue,
       auctionId: this.auction.auctionId,
-      userId: 1
+      userId: 3
     }
-    console.log(this.bid);
-    this.dialogRef.close();
+    this.dialogRef.close(this.bid);
   }
 
 }
