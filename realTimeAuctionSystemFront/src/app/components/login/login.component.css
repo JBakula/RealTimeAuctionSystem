@@ -1,0 +1,17 @@
+.example-card {
+    max-width: 50%;
+    align-items: center;
+    background-color: whitesmoke;
+    margin: auto;
+    border-radius: 30%;
+}
+.second-container {
+    margin-top: 10rem;
+}
+.login-header {
+    justify-content: center;
+    width: 90%; 
+    color: white; 
+    background-color: #3f51b5;
+    margin-bottom: 1.5rem;
+}

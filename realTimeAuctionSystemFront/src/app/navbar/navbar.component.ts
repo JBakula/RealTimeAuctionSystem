@@ -40,6 +40,10 @@ export class NavbarComponent {
     this.router.navigateByUrl('');
   }
 
+  goToLogin() {
+    this.router.navigateByUrl('login');
+  }
+
   openDialog() {
     const dialogRef = this.dialog.open(PlaceAuctionFormDialogComponent,{
       data: {

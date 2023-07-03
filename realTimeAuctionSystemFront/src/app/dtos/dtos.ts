@@ -24,3 +24,8 @@ export interface IPlaceABid {
     auctionId: number,
     userId: number
 }
+
+export interface ILogin {
+    email: string,
+    password: string
+}

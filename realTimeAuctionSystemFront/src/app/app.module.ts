@@ -14,6 +14,7 @@ import { AuctionDetailComponent } from './components/auction-detail/auction-deta
 import { AuctionFormDialogComponent } from './dialogs/auction-form-dialog/auction-form-dialog.component';
 import { PlaceAuctionFormDialogComponent } from './dialogs/place-auction-form-dialog/place-auction-form-dialog.component';
 import { DatePipe } from '@angular/common';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DatePipe } from '@angular/common';
     MainAuctionComponent,
     AuctionDetailComponent,
     AuctionFormDialogComponent,
-    PlaceAuctionFormDialogComponent
+    PlaceAuctionFormDialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
