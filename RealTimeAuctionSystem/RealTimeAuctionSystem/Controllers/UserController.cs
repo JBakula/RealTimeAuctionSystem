@@ -45,7 +45,7 @@ namespace RealTimeAuctionSystem.Controllers
             }
             else
             {
-                return Ok(token);
+                return Ok(new { Token=token });
             }
         }
     }

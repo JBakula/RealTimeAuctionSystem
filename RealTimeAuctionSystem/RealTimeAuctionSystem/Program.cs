@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using RealTimeAuctionSystem.Context;
 using RealTimeAuctionSystem.Hubs;
 using RealTimeAuctionSystem.Repositories.AuctionRepo;
 using RealTimeAuctionSystem.Repositories.BidRepo;
 using RealTimeAuctionSystem.Repositories.CategoryRepo;
 using RealTimeAuctionSystem.Repositories.UserRepo;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +35,20 @@ builder.Services.AddCors(options =>
             .SetIsOriginAllowedToAllowWildcardSubdomains();
         });
 });
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
+                                                .GetBytes(builder.Configuration.GetSection("AppSettings:SecretKey").Value)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        ClockSkew = TimeSpan.Zero
+                    };
+                });
 builder.Services.AddSignalR();
 var app = builder.Build();
 
