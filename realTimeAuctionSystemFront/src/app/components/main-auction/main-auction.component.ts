@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IAllAuctions } from 'src/app/dtos/dtos';
+import { IAllAuctions, IUser } from 'src/app/dtos/dtos';
 import { SharedService } from 'src/app/services/shared.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-main-auction',
@@ -13,8 +14,20 @@ export class MainAuctionComponent implements OnInit {
   dataSource!: IAllAuctions[];
   displayedColumns: string[] = ['auctionId', 'title', 'description', 'startingPrice',
     'categoryId', 'startsAt', 'endsIn', 'image', 'bids'];
+  userInfo: IUser = {};
+  isLogedIn: boolean = false;
 
-  constructor(private _sharedService: SharedService, private router: Router) {}
+  constructor(private _sharedService: SharedService, private router: Router, 
+      private activatedRoute: ActivatedRoute, public _loginService: LoginService) {
+        this.activatedRoute.queryParams.subscribe(params => {
+          if(params['decodeTokenJson'] !== undefined && params['decodeTokenJson'] !== 'null') {
+            this.userInfo = JSON.parse(params['decodeTokenJson']);
+          }
+        });
+        this._loginService.isLoggedIn.subscribe(resp => {
+          this.isLogedIn = resp;
+        });
+      }
 
   ngOnInit(): void {
     //  Dohvat svih aukcija
@@ -23,10 +36,11 @@ export class MainAuctionComponent implements OnInit {
       this.dataSource = this.allAuctions;
     }, error => {
       console.log("We have a error: ", error);
-    })
+    });
   }
 
   goToDetails(auction: IAllAuctions) {
-    this.router.navigate(['/details'], { queryParams: { data: auction.auctionId } });
+    const userInfoJson = JSON.stringify(this.userInfo);
+    this.router.navigate(['/details'], { queryParams: { audtionId: auction.auctionId, decodeTokenJson: userInfoJson } });
   }
 }

@@ -28,8 +28,13 @@
 
             <div class="col-md-6">
                 <mat-form-field style="width: 100%; margin-top: 1rem;">
-                    <mat-label>CategoryId</mat-label>
-                    <input formControlName="categoryIdValue" matInput>
+                    <mat-label>Category</mat-label>
+                    <mat-select formControlName="categoryIdValue">
+                        <mat-option *ngFor="let category of categorys" [value]="category.categoryId">
+                            {{ category.categoryName }}
+                        </mat-option>
+                    </mat-select>
+                    <!-- <input formControlName="categoryIdValue" matInput> -->
                 </mat-form-field>
             </div>
 

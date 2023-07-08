@@ -4,7 +4,7 @@ import { ValidatorFn } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { IPlaceAnAuction } from 'src/app/dtos/dtos';
+import { IAllCategory, IPlaceAnAuction } from 'src/app/dtos/dtos';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class PlaceAuctionFormDialogComponent {
   auctionFormGroup!: FormGroup;
   placeAuction!: IPlaceAnAuction;
   helperImage?: FormData | null;
+  categorys!: IAllCategory[];
 
   constructor(public dialogRef: MatDialogRef<IPlaceAnAuction>, @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder, public datePipe: DatePipe, private _sharedService: SharedService) {
@@ -31,7 +32,11 @@ export class PlaceAuctionFormDialogComponent {
       categoryIdValue: ['', [Validators.required]],
       endsInValue: ['', [Validators.required, this.dateValidator()]],
       imageValue: ['', []],
-    })
+    });
+    //  Dohvat svih kategorija
+    this._sharedService.getAllCategorys().subscribe(resp => {
+      this.categorys = resp;
+    });
   }
 
   imageUpload(event: any) {

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedService } from './services/shared.service';
 import { MaterialsModule } from './materials/materials.module';
@@ -15,6 +15,7 @@ import { AuctionFormDialogComponent } from './dialogs/auction-form-dialog/auctio
 import { PlaceAuctionFormDialogComponent } from './dialogs/place-auction-form-dialog/place-auction-form-dialog.component';
 import { DatePipe } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
+import { JwtInterceptorInterceptor } from './services/jwt-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,11 @@ import { LoginComponent } from './components/login/login.component';
   ],
   providers: [
     SharedService,
-    DatePipe
+    DatePipe,
+    {
+      provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

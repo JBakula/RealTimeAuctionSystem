@@ -29,3 +29,16 @@ export interface ILogin {
     email: string,
     password: string
 }
+
+export interface IUser {
+    email?: string,
+    username?: string,
+    userId?: string;
+    roleId?: string,
+    exp?: number
+}
+
+export interface IAllCategory {
+    categoryId: string,
+    categoryName: string
+}

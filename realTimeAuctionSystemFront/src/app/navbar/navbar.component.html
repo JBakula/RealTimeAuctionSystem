@@ -7,8 +7,8 @@
       <span class="example-spacer"></span>
       <h2 style="margin-top: 1rem;">Real time auction</h2>
       <span class="example-spacer"></span>
-      <mat-label>
-        Username
+      <mat-label *ngIf="isLogedIn">
+        {{ userInfo.username}}
       </mat-label>
       <button class="example-icon" 
           mat-icon-button 
@@ -28,7 +28,7 @@
                 <mat-icon class="bttn-color-login">sentiment_very_satisfied</mat-icon>
                 <span>Log in</span>
               </button>
-              <button mat-menu-item>
+              <button mat-menu-item (click)="goLogOut()">
                 <mat-icon class="bttn-color-logout">sentiment_very_dissatisfied</mat-icon>
                 <span>Log out</span>
               </button>
