@@ -76,7 +76,8 @@ export class AuctionDetailComponent implements OnInit, OnDestroy {
           startsAt: this.auction.startsAt,
           endsIn: this.auction.endsIn,
           image: this.auction.image,
-          bids: this.auction.bids
+          bids: this.auction.bids,
+          userId: this.userInfo.userId
         }
       });
       dialogRef.afterClosed().subscribe(result => {

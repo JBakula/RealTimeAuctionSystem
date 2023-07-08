@@ -3,6 +3,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AuctionDetailComponent } from 'src/app/components/auction-detail/auction-detail.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IPlaceABid } from 'src/app/dtos/dtos';
+import { ActivatedRoute } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-auction-form-dialog',
@@ -29,7 +31,7 @@ export class AuctionFormDialogComponent implements OnInit{
     this.bid = {
       value: this.bidFormGroup.value.bidValue,
       auctionId: this.auction.auctionId,
-      userId: 3
+      userId: Number(this.auction.userId)
     }
     this.dialogRef.close(this.bid);
   }
