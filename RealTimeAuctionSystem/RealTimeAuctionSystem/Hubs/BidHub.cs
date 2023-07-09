@@ -22,7 +22,8 @@ namespace RealTimeAuctionSystem.Hubs
                 UserId = userId
             };
             var bid = await _bidRepo.CreateBid(newBidDto);
-            await Clients.All.SendAsync("newBid", bid);
+            var bids = await _bidRepo.GetBids(auctionId);
+            await Clients.All.SendAsync("newBid", bids);
         }
     }
 }

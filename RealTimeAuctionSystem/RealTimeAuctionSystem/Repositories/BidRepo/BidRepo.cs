@@ -34,5 +34,21 @@ namespace RealTimeAuctionSystem.Repositories.BidRepo
                 return bid;
             }
         }
+
+        public async Task<IEnumerable<BidsResponseDto>> GetBids(int auctionId)
+        {
+            var query = "SELECT b.\"BidId\", b.\"UserId\", u.\"UserName\", b.\"AuctionId\",b.\"Value\" " +
+                "FROM \"Bid\" b " +
+                "JOIN \"User\" u ON u.\"UserId\" = b.\"UserId\"" +
+                "JOIN \"Auction\" a ON a.\"AuctionId\" = b.\"AuctionId\"" +
+                "WHERE b.\"AuctionId\" = @auctionId";
+
+            using(var connection = _context.CreateConnection())
+            {
+                var bids = await connection.QueryAsync<BidsResponseDto>(query, new { auctionId });
+                return bids.ToList();
+            }
+
+        }
     }
 }
