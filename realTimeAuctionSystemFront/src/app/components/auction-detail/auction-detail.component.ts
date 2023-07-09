@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuctionFormDialogComponent } from 'src/app/dialogs/auction-form-dialog/auction-form-dialog.component';
-import { IAllAuctions, IUser } from 'src/app/dtos/dtos';
+import { IAllAuctions, IBids, IUser } from 'src/app/dtos/dtos';
 import { LoginService } from 'src/app/services/login.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { WebsocketService } from 'src/app/services/websocket.service';
@@ -17,6 +17,8 @@ export class AuctionDetailComponent implements OnInit, OnDestroy {
   auction!: IAllAuctions;
   userInfo: IUser = {};
   isLogedIn: boolean = false;
+  bids: IBids[] = [];
+  maxBid: IBids = {value: 0};
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     private _sharedService: SharedService, public dialog: MatDialog, private ws: WebsocketService,
@@ -51,11 +53,24 @@ export class AuctionDetailComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     this.ws.startConnection();
+    this.ws.newBid();
 
-    // setTimeout(() => {
-    //   this.ws.newBid();
-    //   this.ws.createBid();
-    // }, 2000);
+    this.ws.bids.subscribe(resp => {
+      this.bids = resp.filter(r => r.auctionId === this.auction.auctionId);
+      console.log(resp);
+      this.bids.sort((a, b) => {
+        if(a.bidId && b.bidId) {
+          return a.bidId - b.bidId;
+        } else {
+          return 0;
+        }
+      });
+      this.bids.forEach(element => {
+        if(element.value !== undefined && this.maxBid.value !== undefined) {
+          this.maxBid = element.value > this.maxBid.value ? element : this.maxBid;
+        }
+      });
+    });
   }
 
   ngOnDestroy() {
@@ -83,9 +98,8 @@ export class AuctionDetailComponent implements OnInit, OnDestroy {
       dialogRef.afterClosed().subscribe(result => {
         if(result.value !== undefined) {
           result.value = Number(result.value);
-          console.log(result);
           this.ws.createBid(result.userId, result.auctionId, result.value);
-          this.ws.newBid();
+          // this.ws.newBid();
         }
       });
     } else {

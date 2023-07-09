@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpTransportType, HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
+import { BehaviorSubject } from 'rxjs';
+import { IBids } from '../dtos/dtos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebsocketService {
   wsPath: string = "https://localhost:7273/hubs/bidHub";
+  private _bids = new BehaviorSubject<IBids[]>([{}]);
+  bids = this._bids.asObservable();
 
   constructor() { }
 
@@ -34,7 +38,7 @@ export class WebsocketService {
 
   newBid() {
     this.hubConnection.on('newBid', (resp) => {
-      console.log(resp);
-    })
+      this._bids.next(resp);
+    });
   }
 }

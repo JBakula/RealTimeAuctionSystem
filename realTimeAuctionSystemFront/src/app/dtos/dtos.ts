@@ -42,3 +42,11 @@ export interface IAllCategory {
     categoryId: string,
     categoryName: string
 }
+
+export interface IBids {
+    bidId?: number,
+    userId?: number,
+    userName?: string,
+    auctionId?: number,
+    value?: number
+}

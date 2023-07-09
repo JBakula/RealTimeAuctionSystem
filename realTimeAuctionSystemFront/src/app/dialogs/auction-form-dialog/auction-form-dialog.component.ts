@@ -3,8 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AuctionDetailComponent } from 'src/app/components/auction-detail/auction-detail.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IPlaceABid } from 'src/app/dtos/dtos';
-import { ActivatedRoute } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'app-auction-form-dialog',
@@ -24,7 +23,7 @@ export class AuctionFormDialogComponent implements OnInit{
   ngOnInit() {
     this.bidFormGroup = this.fb.group({
       bidValue: ['', [Validators.required]]
-    })
+    });
   }
 
   onSubmit() {

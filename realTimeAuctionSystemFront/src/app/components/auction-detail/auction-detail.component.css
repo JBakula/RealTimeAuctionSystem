@@ -36,6 +36,21 @@
 .bid-card {
     justify-content: center;
 }
+.table-container {
+    position: relative;
+    min-height: 200px;
+    max-height: 400px;
+    overflow: auto;
+}
+.highest-bid {
+    padding: 0.3rem;
+    border-radius: 2rem;
+    background-color: #14cc1b;
+    color: white;
+    width: 40%;
+    height: 4rem;
+    margin: auto;
+}
 
 /* @Medi */
 @media screen and (max-width: 450px) {

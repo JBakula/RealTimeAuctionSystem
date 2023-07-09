@@ -27,6 +27,23 @@
                     Bid
                 </button>
             </mat-card-actions>
+
+            <div *ngIf="bids.length > 1">
+                <div class="highest-bid mb-4 mt-4">
+                    <u>Highest bid</u> <br>
+                    <b>{{ maxBid.userName }}</b> {{ maxBid.value }}
+                </div>
+                <h2 style="background-color: whitesmoke;">List of all bids</h2>
+                <div class="table-container">
+                    <table class="table table-responsive">
+                        <tbody *ngFor="let bid of bids">
+                          <tr>
+                            <td scope="row" class="border" rowspan="2" style="text-align: left;"><b>{{ bid.bidId + ' ' + bid.userName }}</b> <br> Bid: {{ bid.value }} </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </mat-card>
 </div>
