@@ -1,13 +1,20 @@
+
 <div class="container">
     <div class="second-container">
         <mat-card class="example-card">
-            <mat-card-header class="login-header">
-                <mat-card-title>Log In</mat-card-title>
-                <mat-card-subtitle>Log in to bid!</mat-card-subtitle>
+            <mat-card-header class="register-header">
+                <mat-card-title>Register</mat-card-title>
+                <mat-card-subtitle>Join the auction!</mat-card-subtitle>
             </mat-card-header>
             <!-- <hr style="width: 90%;"> -->
             <mat-card-content style="width: 90%; text-align: center;">
-                <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                <form [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                    <mat-form-field appearance="outline" style="width: 90%;">
+                        <mat-label>User name</mat-label>
+                        <input formControlName="userName" matInput type="text" placeholder="Placeholder">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                      </mat-form-field>
+
                     <mat-form-field appearance="outline" style="width: 90%;">
                         <mat-label>Email</mat-label>
                         <input formControlName="email" matInput type="text" placeholder="Placeholder">
@@ -21,8 +28,8 @@
                       </mat-form-field>
 
                       <mat-card-actions style="justify-content: space-around;">
-                        <button mat-raised-button [disabled]="loginFormGroup.invalid" type="submit" color="primary" style="width: 30%;">Log in</button>
-                        <a class="class-for-a" (click)="goToRegister()">Dont have account? Click here!</a>
+                        <button mat-raised-button [disabled]="registerFormGroup.invalid" type="submit" color="primary" style="width: 30%;">Register</button>
+                        <a class="class-for-a" (click)="goToLogin()">Allready have account? Click here!</a>
                       </mat-card-actions>
                 </form>
             </mat-card-content>

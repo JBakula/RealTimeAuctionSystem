@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ILogin } from '../dtos/dtos';
+import { ILogin, IRegister } from '../dtos/dtos';
 import { environment } from 'src/environments/environment.development';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -32,5 +32,9 @@ export class LoginService {
     this._isLoggedIn.next(true);
 
     return this.http.post(`${environment.domain}/User/login`, loginRequest);
+  }
+
+  register(registerRequest: IRegister): Observable<any> {
+    return this.http.post(`${environment.domain}/User/register`, registerRequest);
   }
 }

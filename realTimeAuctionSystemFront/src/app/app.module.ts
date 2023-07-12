@@ -16,6 +16,7 @@ import { PlaceAuctionFormDialogComponent } from './dialogs/place-auction-form-di
 import { DatePipe } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { JwtInterceptorInterceptor } from './services/jwt-interceptor.interceptor';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { JwtInterceptorInterceptor } from './services/jwt-interceptor.intercepto
     AuctionDetailComponent,
     AuctionFormDialogComponent,
     PlaceAuctionFormDialogComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
