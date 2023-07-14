@@ -16,6 +16,9 @@ export class MainAuctionComponent implements OnInit {
     'categoryId', 'startsAt', 'endsIn', 'image', 'bids'];
   userInfo: IUser = {};
   isLogedIn: boolean = false;
+  sliceBegin!: number;
+  sliceEnd!: number;
+  pageItems!: number;
 
   constructor(private _sharedService: SharedService, private router: Router, 
       private activatedRoute: ActivatedRoute, public _loginService: LoginService) {
@@ -27,13 +30,16 @@ export class MainAuctionComponent implements OnInit {
         this._loginService.isLoggedIn.subscribe(resp => {
           this.isLogedIn = resp;
         });
+        this.pageItems = 6;
+        this.sliceBegin = 0;
+        this.sliceEnd = 0;
       }
 
   ngOnInit(): void {
     //  Dohvat svih aukcija
     this._sharedService.getAllAuctions().subscribe(response => {
-      this.allAuctions = response;
-      this.dataSource = this.allAuctions;
+      this.allAuctions = response.sort((a, b) => a.auctionId + b.auctionId);
+      this.dataSource = this.allAuctions.slice(this.sliceBegin, this.sliceEnd += this.pageItems);
     }, error => {
       console.log("We have a error: ", error);
     });
@@ -42,5 +48,14 @@ export class MainAuctionComponent implements OnInit {
   goToDetails(auction: IAllAuctions) {
     const userInfoJson = JSON.stringify(this.userInfo);
     this.router.navigate(['/details'], { queryParams: { audtionId: auction.auctionId, decodeTokenJson: userInfoJson } });
+  }
+
+  something(event: any) {
+    console.log(event);
+    if(event.pageIndex > event.previousPageIndex) {
+      this.dataSource = this.allAuctions.slice(this.sliceBegin += this.pageItems, this.sliceEnd += this.pageItems);
+    } else if(event.pageIndex < event.previousPageIndex) {
+      this.dataSource = this.allAuctions.slice(this.sliceBegin -= this.pageItems, this.sliceEnd -= this.pageItems);
+    }
   }
 }

@@ -1,7 +1,7 @@
 <div class="main-auction-container container">
     <!-- CARDSS -->
     <div class="row">
-        <div class="col-lg-4" *ngFor="let auction of allAuctions">
+        <div class="col-lg-4" *ngFor="let auction of dataSource">
             <mat-card class="example-card">
                 <div class="div-card">
                     <mat-card-header style="text-align: center;">
@@ -33,10 +33,11 @@
                 </div>
             </mat-card>
         </div>
-        <mat-paginator [length]="100"
-            [pageSize]="10"
-            [pageSizeOptions]="[5, 10, 25, 100]"
-            aria-label="Select page">
-        </mat-paginator>
     </div>
 </div>
+<mat-paginator class="paginator"
+    [length]="allAuctions.length"
+    [pageSize]="6"
+    aria-label="Select page"
+    (page)="something($event)">
+</mat-paginator>
