@@ -33,6 +33,19 @@ export class MainAuctionComponent implements OnInit {
         this.pageItems = 6;
         this.sliceBegin = 0;
         this.sliceEnd = 0;
+        this._sharedService.refresh.subscribe(resp => {
+          console.log(resp);
+          if(resp !== null) {
+            this._sharedService.getAllAuctions().subscribe(response => {
+              this.allAuctions = response.sort((a, b) => a.auctionId + b.auctionId);
+              this.sliceBegin = 0;
+              this.sliceEnd = 0;
+              this.dataSource = this.allAuctions.slice(this.sliceBegin, this.sliceEnd += this.pageItems);
+            }, error => {
+              console.log("We have a error: ", error);
+            });
+          }
+        });
       }
 
   ngOnInit(): void {

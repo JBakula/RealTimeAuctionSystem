@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { IAllAuctions, IAllCategory, IPlaceAnAuction } from '../dtos/dtos';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { IAllAuctions, IAllCategory, IBids, IPlaceAnAuction } from '../dtos/dtos';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
+  private _refresh = new BehaviorSubject<any>(false);
+  refresh = this._refresh.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -26,5 +28,13 @@ export class SharedService {
   placeAnAuction(auction: IPlaceAnAuction) {
     console.log(auction);
     return this.http.post(`${environment.domain}/Auction`, auction);
+  }
+
+  getAllBids(auctionId: number): Observable<IBids[]> {
+    return this.http.get<IBids[]>(`${environment.domain}/Bid/${auctionId}`);
+  }
+
+  newRefresh() {
+    this._refresh.next(true);
   }
 }

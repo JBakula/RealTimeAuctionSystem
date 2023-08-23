@@ -81,6 +81,7 @@ export class NavbarComponent {
         if(result !== '') {
           this._sharedService.placeAnAuction(result).subscribe(response => {
             console.log(response);
+            this._sharedService.newRefresh();
           }, error => {
             console.log(error);
           });

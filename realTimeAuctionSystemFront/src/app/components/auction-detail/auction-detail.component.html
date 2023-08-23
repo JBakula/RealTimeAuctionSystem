@@ -28,7 +28,7 @@
                 </button>
             </mat-card-actions>
 
-            <div *ngIf="bids.length > 1">
+            <div *ngIf="bids.length >= 1">
                 <div class="highest-bid mb-4 mt-4">
                     <u>Highest bid</u> <br>
                     <b>{{ maxBid.userName }}</b> {{ maxBid.value }}

@@ -47,6 +47,17 @@ export class AuctionDetailComponent implements OnInit, OnDestroy {
         if(params['decodeTokenJson'] !== undefined) {
           this.userInfo = JSON.parse(params['decodeTokenJson']);
         }
+        this._sharedService.getAllBids(params['audtionId']).subscribe(resp => {
+          console.log(resp);
+          this.bids = resp;
+          this.bids.forEach(element => {
+            if(element.value !== undefined && this.maxBid.value !== undefined) {
+              this.maxBid = element.value > this.maxBid.value ? element : this.maxBid;
+            }
+          });
+        }, error => {
+          console.log(error);
+        });
       });
     }
 
@@ -98,7 +109,8 @@ export class AuctionDetailComponent implements OnInit, OnDestroy {
       dialogRef.afterClosed().subscribe(result => {
         if(result.value !== undefined) {
           result.value = Number(result.value);
-          this.ws.createBid(result.userId, result.auctionId, result.value);
+          if(this.maxBid?.value !== undefined && result.value >= this.maxBid?.value)
+            this.ws.createBid(result.userId, result.auctionId, result.value);
           // this.ws.newBid();
         }
       });
