@@ -10,10 +10,13 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
     {
         private readonly DapperContext _context;
         public static IWebHostEnvironment _webHostEnvironment;
-        public AuctionRepo(DapperContext context, IWebHostEnvironment webHostEnvironment)
+        private readonly ILogger<AuctionRepo> _logger;
+
+        public AuctionRepo(DapperContext context, IWebHostEnvironment webHostEnvironment,ILogger<AuctionRepo> logger)
         {
             _context = context;
             _webHostEnvironment = webHostEnvironment;
+            _logger = logger;
         }
         public async Task<IEnumerable<Auction>> GetAuctions()
         {
@@ -42,24 +45,32 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
             parameters.Add("EndsIn", endsIn);
             parameters.Add("Image", imagePath);
 
-
-            using (var connection = _context.CreateConnection())
+            try
             {
-                var id = await connection.QuerySingleAsync<int>(query,parameters);
-
-                var auction = new Auction
+                using (var connection = _context.CreateConnection())
                 {
-                    AuctionId = id,
-                    Title = newAuction.Title,
-                    Description = newAuction.Description,
-                    StartingPrice = newAuction.StartingPrice,
-                    CategoryId = newAuction.CategoryId,
-                    StartsAt = currentTime,
-                    EndsIn = endsIn,
-                    Image = imagePath
-                };
-                return auction;
+                    var id = await connection.QuerySingleAsync<int>(query, parameters);
+
+                    var auction = new Auction
+                    {
+                        AuctionId = id,
+                        Title = newAuction.Title,
+                        Description = newAuction.Description,
+                        StartingPrice = newAuction.StartingPrice,
+                        CategoryId = newAuction.CategoryId,
+                        StartsAt = currentTime,
+                        EndsIn = endsIn,
+                        Image = imagePath
+                    };
+                    return auction;
+                }
             }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return null;
+            }
+            
 
         }
         public string GenerateImagePath(IFormFile image)
@@ -82,6 +93,7 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
             }
             catch (Exception e)
             {
+                _logger.LogError(e, e.Message);
                 return "";
             }
         }
