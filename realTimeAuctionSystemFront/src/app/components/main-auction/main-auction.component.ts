@@ -52,6 +52,8 @@ export class MainAuctionComponent implements OnInit {
     //  Dohvat svih aukcija
     this._sharedService.getAllAuctions().subscribe(response => {
       this.allAuctions = response.sort((a, b) => a.auctionId + b.auctionId);
+      this.sliceBegin = 0;
+      this.sliceEnd = 0;
       this.dataSource = this.allAuctions.slice(this.sliceBegin, this.sliceEnd += this.pageItems);
     }, error => {
       console.log("We have a error: ", error);
