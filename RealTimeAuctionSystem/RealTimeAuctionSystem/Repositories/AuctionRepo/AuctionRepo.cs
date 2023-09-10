@@ -122,13 +122,15 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
 
             var paramteres = new DynamicParameters();
             var imagePath = GenerateImagePath(auction.Image);
+            var startsAt = DateTime.Parse(auction.StartsAt);
+            var endsIn = DateTime.Parse(auction.EndsIn);
             paramteres.Add("AuctionId", id);
             paramteres.Add("Title", auction.Title);
             paramteres.Add("Description", auction.Description);
             paramteres.Add("StartingPrice", auction.StartingPrice);
             paramteres.Add("CategoryId", auction.CategoryId);
-            paramteres.Add("StartsAt", auction.StartsAt);
-            paramteres.Add("EndsIn", auction.EndsIn);
+            paramteres.Add("StartsAt", startsAt);
+            paramteres.Add("EndsIn", endsIn);
             paramteres.Add("Image", imagePath);
 
             using (var connection = _context.CreateConnection())
