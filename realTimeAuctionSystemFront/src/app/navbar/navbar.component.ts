@@ -61,7 +61,7 @@ export class NavbarComponent {
     if(this.isLogedIn) {
       localStorage.removeItem('token');
       console.count('You are logged out');
-      this.router.navigateByUrl('');
+      this._loginService.loginMetod(false);
     }
   }
 

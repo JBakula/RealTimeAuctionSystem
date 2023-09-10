@@ -59,7 +59,14 @@ export class EditAuctionDialogComponent implements OnInit {
    }
 
   onSubmit() {
-    console.log('Submit...');
+    const pomData = {
+      title: this.auctionFormGroup.value.titleValue,
+      description: this.auctionFormGroup.value.descriptionValue,
+      startingPrice: this.auctionFormGroup.value.startingPriceValue,
+      categoryId: this.auctionFormGroup.value.categoryIdValue,
+      startsAt: this.auctionFormGroup.value.startsInValue.toString(),
+      endsIn: this.auctionFormGroup.value.endsInValue.toString(),
+    }
     const formData = new FormData();
     formData.append('Title', this.auctionFormGroup.value.titleValue);
     formData.append('Description', this.auctionFormGroup.value.descriptionValue);
@@ -72,6 +79,7 @@ export class EditAuctionDialogComponent implements OnInit {
 
     this.dialogRef.close({
       formData: formData,
+      // formData: pomData,
       categoryId: this.auction.auctionId
     });
   }

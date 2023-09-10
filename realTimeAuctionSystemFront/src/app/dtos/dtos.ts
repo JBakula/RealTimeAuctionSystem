@@ -15,6 +15,7 @@ export interface IPlaceAnAuction {
     description: string,
     startingPrice: number,
     categoryId: number,
+    startsAt?: string,
     endsIn: string,
     image?: File | null
 }

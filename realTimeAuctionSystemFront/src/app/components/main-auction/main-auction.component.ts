@@ -150,18 +150,5 @@ export class MainAuctionComponent implements OnInit {
         this.router.navigate(['/login']);
       }
     });
-    //   dialogRef.afterClosed().subscribe(result => {
-    //     if(result !== '') {
-    //       this._sharedService.placeAnAuction(result).subscribe(response => {
-    //         console.log(response);
-    //         this._sharedService.newRefresh();
-    //       }, error => {
-    //         console.log(error);
-    //       });
-    //     }
-    //   });
-    // } else {
-    //   this.router.navigate(['/login']);
-    // }
   }
 }

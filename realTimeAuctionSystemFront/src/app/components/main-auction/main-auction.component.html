@@ -6,8 +6,10 @@
                 <div class="div-card">
                     <mat-card-header style="text-align: center;">
                         <mat-card-title-group class="div-title-group">
-                            <button mat-stroked-button color="primary" (click)="openEditDialog(auction.auctionId)" style="min-width: 5rem;">Edit</button>
-                            <button mat-stroked-button color="warn" (click)="deleteAuction(auction.auctionId)" style="min-width: 5rem;">Delete</button>
+                            <div *ngIf="userInfo.roleId === '2'">
+                                <button mat-stroked-button color="primary" (click)="openEditDialog(auction.auctionId)" style="min-width: 5rem;">Edit</button>
+                                <button mat-stroked-button color="warn" (click)="deleteAuction(auction.auctionId)" style="min-width: 5rem;">Delete</button>
+                            </div>
                             <mat-card-title>{{auction.title}}</mat-card-title>
                             <mat-card-subtitle>Početna cijena: {{auction.startingPrice}}KM</mat-card-subtitle>
                             <mat-divider></mat-divider>
