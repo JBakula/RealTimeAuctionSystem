@@ -16,8 +16,8 @@ export class PlaceAuctionFormDialogComponent {
   auction: any;
   auctionFormGroup!: FormGroup;
   placeAuction!: IPlaceAnAuction;
-  helperImage?: FormData | null;
   categorys!: IAllCategory[];
+  selectedFile: File | null = null;
 
   constructor(public dialogRef: MatDialogRef<IPlaceAnAuction>, @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder, public datePipe: DatePipe, private _sharedService: SharedService) {
@@ -28,7 +28,7 @@ export class PlaceAuctionFormDialogComponent {
     this.auctionFormGroup = this.fb.group({
       titleValue: ['', [Validators.required]],
       descriptionValue: ['', [Validators.required]],
-      startingPriceValue: ['', [Validators.required]],
+      startingPriceValue: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       categoryIdValue: ['', [Validators.required]],
       endsInValue: ['', [Validators.required, this.dateValidator()]],
       imageValue: ['', []],
@@ -40,27 +40,18 @@ export class PlaceAuctionFormDialogComponent {
   }
 
   imageUpload(event: any) {
-    let file: File = event.target.files[0]; 
-    const formData: FormData = new FormData();
-    formData.append('file', file, file.name);
-    this.helperImage = formData;
+    this.selectedFile = event.target.files[0];
    }
 
   onSubmit() {
-    this.placeAuction = {
-      title: this.auctionFormGroup.value.titleValue,
-      description: this.auctionFormGroup.value.descriptionValue,
-      startingPrice: Number(this.auctionFormGroup.value.startingPriceValue),
-      categoryId: Number(this.auctionFormGroup.value.categoryIdValue),
-      endsIn: this.auctionFormGroup.value.endsInValue,
-      image: this.helperImage ? this.helperImage : null 
-    }
-
-    console.log(this.placeAuction.image);
-
-
-    this.placeAuction.endsIn = this.datePipe.transform(this.placeAuction.endsIn, 'yyyy-MM-dd hh:mm:ss') ?? '';
-    this.dialogRef.close(this.placeAuction);
+    const formData = new FormData();
+    formData.append('Title', this.auctionFormGroup.value.titleValue);
+    formData.append('Description', this.auctionFormGroup.value.descriptionValue);
+    formData.append('StartingPrice', this.auctionFormGroup.value.startingPriceValue.toString());
+    formData.append('CategoryId', this.auctionFormGroup.value.categoryIdValue.toString());
+    formData.append('EndsIn', this.datePipe.transform(this.auctionFormGroup.value.endsInValue, 'yyyy-MM-dd hh:mm:ss') ?? '');
+    formData.append('Image', this.selectedFile ? this.selectedFile : '');
+    this.dialogRef.close(formData);
   }
 
   dateValidator(): ValidatorFn {

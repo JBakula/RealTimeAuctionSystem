@@ -16,7 +16,7 @@ export interface IPlaceAnAuction {
     startingPrice: number,
     categoryId: number,
     endsIn: string,
-    image?: FormData | null
+    image?: File | null
 }
 
 export interface IPlaceABid {

@@ -17,6 +17,8 @@ import { DatePipe } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { JwtInterceptorInterceptor } from './services/jwt-interceptor.interceptor';
 import { RegisterComponent } from './components/register/register.component';
+import { EditAuctionDialogComponent } from './dialogs/edit-auction-dialog/edit-auction-dialog.component';
+import { DeleteAuctionDialogComponent } from './dialogs/delete-auction-dialog/delete-auction-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { RegisterComponent } from './components/register/register.component';
     AuctionFormDialogComponent,
     PlaceAuctionFormDialogComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditAuctionDialogComponent,
+    DeleteAuctionDialogComponent
   ],
   imports: [
     BrowserModule,

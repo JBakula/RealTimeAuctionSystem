@@ -1,6 +1,7 @@
 import { OnDestroy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuctionFormDialogComponent } from 'src/app/dialogs/auction-form-dialog/auction-form-dialog.component';
 import { IAllAuctions, IBids, IUser } from 'src/app/dtos/dtos';
@@ -22,7 +23,7 @@ export class AuctionDetailComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
     private _sharedService: SharedService, public dialog: MatDialog, private ws: WebsocketService,
-    public _loginService: LoginService) { 
+    public _loginService: LoginService, private _snackBar: MatSnackBar) { 
       this.auction = {
         auctionId: 0,
         title: '',
@@ -111,7 +112,10 @@ export class AuctionDetailComponent implements OnInit, OnDestroy {
           result.value = Number(result.value);
           if(this.maxBid?.value !== undefined && result.value >= this.maxBid?.value)
             this.ws.createBid(result.userId, result.auctionId, result.value);
-          // this.ws.newBid();
+          else
+          this._snackBar.open("Bid must be higher than current max bid.", "Confirm", {
+            duration: 5000
+          });
         }
       });
     } else {

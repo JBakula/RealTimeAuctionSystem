@@ -26,8 +26,16 @@ export class SharedService {
   }
 
   placeAnAuction(auction: IPlaceAnAuction) {
-    console.log(auction);
     return this.http.post(`${environment.domain}/Auction`, auction);
+  }
+
+  editAnAuction(auction: IPlaceAnAuction, id: number) {
+    console.log(id);
+    return this.http.put(`${environment.domain}/Auction/${id}`, auction);
+  }
+
+  deleteAnAuction(id: number) {
+    return this.http.delete(`${environment.domain}/Auction/${id}`);
   }
 
   getAllBids(auctionId: number): Observable<IBids[]> {

@@ -1,0 +1,10 @@
+<mat-dialog-content>
+    <header style="text-align: center;">
+        <h1>Are you sure you want to delete the auction?</h1>
+    </header>
+    
+    <mat-dialog-actions style="justify-content: center;">
+        <button mat-raised-button (click)="dialogClose(true)" color="primary" style="margin-right: 2rem;">Submit</button>
+        <button mat-raised-button (click)="dialogClose(false)" mat-dialog-close color="warn">Cancel</button>
+    </mat-dialog-actions>
+</mat-dialog-content>

@@ -22,7 +22,7 @@ export class AuctionFormDialogComponent implements OnInit{
 
   ngOnInit() {
     this.bidFormGroup = this.fb.group({
-      bidValue: ['', [Validators.required]]
+      bidValue: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
     });
   }
 
