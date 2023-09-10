@@ -16,11 +16,16 @@ export class EditAuctionDialogComponent implements OnInit {
   auctionFormGroup!: FormGroup;
   selectedFile: File | null = null;
   categorys!: IAllCategory[];
+  file!: File;
 
   constructor(public dialogRef: MatDialogRef<MainAuctionComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
   private fb: FormBuilder, public datePipe: DatePipe, private _sharedService: SharedService) {
     this.auction = data;
-    console.log(this.auction);
+    if(this.auction.image !== '' && this.auction.image !== undefined && this.auction.image !== null) {
+      const blob = new Blob([this.auction.image], { type: 'image/jpeg' });
+      this.file = new File([blob], this.auction.image, { type: blob.type });
+      console.log(this.file);
+    }
   }
 
   ngOnInit() {
@@ -59,14 +64,6 @@ export class EditAuctionDialogComponent implements OnInit {
    }
 
   onSubmit() {
-    const pomData = {
-      title: this.auctionFormGroup.value.titleValue,
-      description: this.auctionFormGroup.value.descriptionValue,
-      startingPrice: this.auctionFormGroup.value.startingPriceValue,
-      categoryId: this.auctionFormGroup.value.categoryIdValue,
-      startsAt: '2023/9/29',
-      endsIn: '2023/11/30',
-    }
     const formData = new FormData();
     formData.append('Title', this.auctionFormGroup.value.titleValue);
     formData.append('Description', this.auctionFormGroup.value.descriptionValue);
@@ -74,16 +71,13 @@ export class EditAuctionDialogComponent implements OnInit {
     formData.append('CategoryId', this.auctionFormGroup.value.categoryIdValue.toString());
     formData.append('StartsAt', this.datePipe.transform(this.auctionFormGroup.value.startsInValue, 'yyyy-MM-dd hh:mm:ss') ?? '');
     formData.append('EndsIn', this.datePipe.transform(this.auctionFormGroup.value.endsInValue, 'yyyy-MM-dd hh:mm:ss') ?? '');
-    // formData.append('StartsAt', '2023-9-29T12:00:00');
-    // formData.append('EndsIn', '2023-11-30T12:00:00');
-    // formData.append('StartsAt', '9/9/2023');
-    // formData.append('EndsIn', '11/11/2023');
     if(this.auctionFormGroup.value.imageValue !== '' && this.auctionFormGroup.value.imageValue !== null && this.auctionFormGroup.value.imageValue !== undefined)
       formData.append('Image', this.selectedFile ? this.selectedFile : '');
+    else 
+      formData.append('Image', this.file ? this.file : '');
 
     this.dialogRef.close({
       formData: formData,
-      // formData: pomData,
       categoryId: this.auction.auctionId
     });
   }

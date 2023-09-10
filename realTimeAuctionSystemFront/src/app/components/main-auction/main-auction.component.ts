@@ -126,7 +126,8 @@ export class MainAuctionComponent implements OnInit {
             categoryId: this.auction.categoryId,
             endsIn: this.auction.endsIn,
             startsAt: this.auction.startsAt,
-            auctionId: this.auction.auctionId
+            auctionId: this.auction.auctionId,
+            image: this.auction.image
           }
         });
         dialogRef.afterClosed().subscribe(result => {
