@@ -40,8 +40,7 @@ export class PlaceAuctionFormDialogComponent {
   }
 
   imageUpload(event: any) {
-    let file = event.target.files[0]; 
-    console.log(file);
+    let file: File = event.target.files[0]; 
     const formData: FormData = new FormData();
     formData.append('file', file, file.name);
     this.helperImage = formData;
