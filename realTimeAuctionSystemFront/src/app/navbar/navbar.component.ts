@@ -49,8 +49,13 @@ export class NavbarComponent {
 
   //  Navigacija
   goHome() {
-    const decodeTokenJson = JSON.stringify(this.userInfo);
-    this.router.navigate([''], { queryParams: { decodeTokenJson } });
+    let token = localStorage.getItem('token');
+    if(token) {
+      const decodeTokenJson = JSON.stringify(this.userInfo);
+      this.router.navigate([''], { queryParams: { decodeTokenJson } });
+    } else {
+      this.router.navigate(['']);
+    }
   }
 
   goToLogin() {
