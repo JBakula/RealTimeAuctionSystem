@@ -65,7 +65,7 @@ export class EditAuctionDialogComponent implements OnInit {
     formData.append('Description', this.auctionFormGroup.value.descriptionValue);
     formData.append('StartingPrice', this.auctionFormGroup.value.startingPriceValue.toString());
     formData.append('CategoryId', this.auctionFormGroup.value.categoryIdValue.toString());
-    formData.append('startsAt', this.datePipe.transform(this.auctionFormGroup.value.startsInValue, 'yyyy-MM-dd hh:mm:ss') ?? '');
+    formData.append('StartsAt', this.datePipe.transform(this.auctionFormGroup.value.startsInValue, 'yyyy-MM-dd hh:mm:ss') ?? '');
     formData.append('EndsIn', this.datePipe.transform(this.auctionFormGroup.value.endsInValue, 'yyyy-MM-dd hh:mm:ss') ?? '');
     if(this.auctionFormGroup.value.imageValue !== '' && this.auctionFormGroup.value.imageValue !== null && this.auctionFormGroup.value.imageValue !== undefined)
       formData.append('Image', this.selectedFile ? this.selectedFile : '');
