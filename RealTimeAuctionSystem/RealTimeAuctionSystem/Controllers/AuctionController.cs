@@ -54,7 +54,7 @@ namespace RealTimeAuctionSystem.Controllers
         public async Task<IActionResult> UpdateAuction([FromRoute] int id, [FromForm]  UpdateAuctionDto auction)
         {
             if (!await _auctionRepo.DoesCategoryExist(id) || auction.Title == "" || auction.Description == "" || auction.StartingPrice < 0 ||
-                !await _auctionRepo.DoesCategoryExist(auction.CategoryId) || auction.EndsIn < DateTime.Now)
+                !await _auctionRepo.DoesCategoryExist(auction.CategoryId) || DateTime.Parse(auction.EndsIn) < DateTime.Now)
             {
                 return BadRequest();
             }
