@@ -29,12 +29,14 @@ export class LoginService {
 
   login(loginRequest: ILogin): Observable<any> {
     console.log(loginRequest);
-    this._isLoggedIn.next(true);
-
     return this.http.post(`${environment.domain}/User/login`, loginRequest);
   }
 
   register(registerRequest: IRegister): Observable<any> {
     return this.http.post(`${environment.domain}/User/register`, registerRequest);
+  }
+
+  loginMetod(value: boolean): void {
+    this._isLoggedIn.next(value);
   }
 }

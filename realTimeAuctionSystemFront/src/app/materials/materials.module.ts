@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   exports: [
     MatToolbarModule,
@@ -49,7 +51,8 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialsModule { }
