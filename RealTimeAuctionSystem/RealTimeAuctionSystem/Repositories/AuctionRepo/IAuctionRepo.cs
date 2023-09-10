@@ -13,6 +13,7 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
         Task DeleteAuction(int id);
         Task<bool> DoesAuctionExist(int id);
         Task<AuctionDetails> GetDetails(int id);
+        Task<IEnumerable<Auction>> GetFinishedAuctions();
   
     }
 }

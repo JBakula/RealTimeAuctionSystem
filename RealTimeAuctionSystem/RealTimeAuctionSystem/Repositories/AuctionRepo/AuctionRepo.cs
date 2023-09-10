@@ -180,5 +180,16 @@ namespace RealTimeAuctionSystem.Repositories.AuctionRepo
                 return details;
             }
         }
+
+        public async Task<IEnumerable<Auction>> GetFinishedAuctions()
+        {
+            var date = DateTime.Now;
+            var query = "SELECT * FROM \"Auction\" WHERE  \"EndsIn\" <= @date";
+            using(var connection = _context.CreateConnection())
+            {
+                var auctions = await connection.QueryAsync<Auction>(query, new { date });
+                return auctions;
+            }
+        }
     }
 }

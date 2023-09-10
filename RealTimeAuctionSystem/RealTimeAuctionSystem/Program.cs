@@ -6,16 +6,18 @@ using RealTimeAuctionSystem.Repositories.AuctionRepo;
 using RealTimeAuctionSystem.Repositories.BidRepo;
 using RealTimeAuctionSystem.Repositories.CategoryRepo;
 using RealTimeAuctionSystem.Repositories.UserRepo;
+using RealTimeAuctionSystem.Workers;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddSingleton<DapperContext>();
-builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
-builder.Services.AddScoped<IUserRepo, UserRepo>();  
-builder.Services.AddScoped<IAuctionRepo, AuctionRepo>();
-builder.Services.AddScoped<IBidRepo, BidRepo>();
+builder.Services.AddTransient<ICategoryRepo, CategoryRepo>();
+builder.Services.AddTransient<IUserRepo, UserRepo>();  
+builder.Services.AddTransient<IAuctionRepo, AuctionRepo>();
+builder.Services.AddTransient<IBidRepo, BidRepo>();
+builder.Services.AddHostedService<CloseAuction>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
