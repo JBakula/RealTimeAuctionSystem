@@ -64,8 +64,8 @@ export class EditAuctionDialogComponent implements OnInit {
       description: this.auctionFormGroup.value.descriptionValue,
       startingPrice: this.auctionFormGroup.value.startingPriceValue,
       categoryId: this.auctionFormGroup.value.categoryIdValue,
-      startsAt: this.auctionFormGroup.value.startsInValue.toString(),
-      endsIn: this.auctionFormGroup.value.endsInValue.toString(),
+      startsAt: '2023/9/29',
+      endsIn: '2023/11/30',
     }
     const formData = new FormData();
     formData.append('Title', this.auctionFormGroup.value.titleValue);
@@ -74,6 +74,10 @@ export class EditAuctionDialogComponent implements OnInit {
     formData.append('CategoryId', this.auctionFormGroup.value.categoryIdValue.toString());
     formData.append('StartsAt', this.datePipe.transform(this.auctionFormGroup.value.startsInValue, 'yyyy-MM-dd hh:mm:ss') ?? '');
     formData.append('EndsIn', this.datePipe.transform(this.auctionFormGroup.value.endsInValue, 'yyyy-MM-dd hh:mm:ss') ?? '');
+    // formData.append('StartsAt', '2023-9-29T12:00:00');
+    // formData.append('EndsIn', '2023-11-30T12:00:00');
+    // formData.append('StartsAt', '9/9/2023');
+    // formData.append('EndsIn', '11/11/2023');
     if(this.auctionFormGroup.value.imageValue !== '' && this.auctionFormGroup.value.imageValue !== null && this.auctionFormGroup.value.imageValue !== undefined)
       formData.append('Image', this.selectedFile ? this.selectedFile : '');
 
